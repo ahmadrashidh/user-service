@@ -8,8 +8,6 @@ import lombok.Setter;
 import java.util.Calendar;
 import java.util.Date;
 
-@Getter
-@Setter
 @Entity
 public class Token extends Base {
 
@@ -17,6 +15,15 @@ public class Token extends Base {
     private User user;
     private String value;
     private Date expireAt;
+    private boolean deleted;
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
 
     public User getUser() {
         return user;

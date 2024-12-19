@@ -1,23 +1,15 @@
 package com.ahmad.userservice.dtos;
 
 public class TokenDto {
-    private Long tokenId;
+    private String token;
 
-    public Long getTokenId() {
-        return tokenId;
+    public String getToken() {
+        return token;
     }
 
-    public void setTokenId(Long tokenId) {
-        this.tokenId = tokenId;
+    public void setToken(String token) {
+        this.token = token;
     }
 
-    public String getTokenValue() {
-        return tokenValue;
-    }
 
-    public void setTokenValue(String tokenValue) {
-        this.tokenValue = tokenValue;
-    }
-
-    private String tokenValue;
 }
