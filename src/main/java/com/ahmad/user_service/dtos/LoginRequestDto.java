@@ -1,17 +1,8 @@
-package com.ahmad.userservice.dtos;
+package com.ahmad.user_service.dtos;
 
-public class SignupRequestDto {
-    private String name;
+public class LoginRequestDto {
     private String emailAddress;
     private String password;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEmailAddress() {
         return emailAddress;

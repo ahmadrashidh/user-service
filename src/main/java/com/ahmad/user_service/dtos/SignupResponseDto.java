@@ -1,7 +1,4 @@
-package com.ahmad.userservice.dtos;
-
-import lombok.Getter;
-import lombok.Setter;
+package com.ahmad.user_service.dtos;
 
 
 public class SignupResponseDto {

@@ -1,11 +1,11 @@
-package com.ahmad.userservice.services;
+package com.ahmad.user_service.services;
 
-import com.ahmad.userservice.dtos.SignupDto;
-import com.ahmad.userservice.exceptions.IncorrectUsernamePasswordException;
-import com.ahmad.userservice.models.Token;
-import com.ahmad.userservice.models.User;
-import com.ahmad.userservice.repositories.TokenRepository;
-import com.ahmad.userservice.repositories.UserRepository;
+import com.ahmad.user_service.dtos.SignupDto;
+import com.ahmad.user_service.exceptions.IncorrectUsernamePasswordException;
+import com.ahmad.user_service.models.Token;
+import com.ahmad.user_service.models.User;
+import com.ahmad.user_service.repositories.TokenRepository;
+import com.ahmad.user_service.repositories.UserRepository;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

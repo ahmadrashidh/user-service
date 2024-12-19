@@ -1,6 +1,6 @@
-package com.ahmad.userservice.repositories;
+package com.ahmad.user_service.repositories;
 
-import com.ahmad.userservice.models.User;
+import com.ahmad.user_service.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

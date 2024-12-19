@@ -1,8 +1,8 @@
-package com.ahmad.userservice.services;
+package com.ahmad.user_service.services;
 
-import com.ahmad.userservice.dtos.SignupDto;
-import com.ahmad.userservice.models.Token;
-import com.ahmad.userservice.models.User;
+import com.ahmad.user_service.dtos.SignupDto;
+import com.ahmad.user_service.models.Token;
+import com.ahmad.user_service.models.User;
 
 public interface UserService {
 
@@ -13,5 +13,6 @@ public interface UserService {
     Token createToken(User user);
 
     void logout(String value);
+    
 
 }

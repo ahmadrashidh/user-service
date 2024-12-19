@@ -1,4 +1,4 @@
-package com.ahmad.userservice.dtos;
+package com.ahmad.user_service.dtos;
 
 public class TokenDto {
     private String token;

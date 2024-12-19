@@ -1,4 +1,4 @@
-package com.ahmad.userservice.configurations;
+package com.ahmad.user_service.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

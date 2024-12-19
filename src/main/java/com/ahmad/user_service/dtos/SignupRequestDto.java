@@ -1,10 +1,6 @@
-package com.ahmad.userservice.dtos;
+package com.ahmad.user_service.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
-
-
-public class SignupDto {
+public class SignupRequestDto {
     private String name;
     private String emailAddress;
     private String password;

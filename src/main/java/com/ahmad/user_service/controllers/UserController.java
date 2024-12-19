@@ -1,15 +1,11 @@
-package com.ahmad.userservice.controllers;
+package com.ahmad.user_service.controllers;
 
-import com.ahmad.userservice.dtos.*;
-import com.ahmad.userservice.models.Token;
-import com.ahmad.userservice.models.User;
-import com.ahmad.userservice.services.UserService;
-import org.springframework.http.HttpStatus;
+import com.ahmad.user_service.dtos.*;
+import com.ahmad.user_service.models.Token;
+import com.ahmad.user_service.models.User;
+import com.ahmad.user_service.services.UserService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("user")
@@ -39,6 +35,12 @@ public class UserController {
     public ResponseEntity<Void> logout(@RequestBody TokenDto tokenDto){
 
         this.authService.logout(tokenDto.getToken());
+
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("validate/{token}")
+    public ResponseEntity<Void> validateToken(@PathVariable("token") String token){
 
         return ResponseEntity.ok().build();
     }

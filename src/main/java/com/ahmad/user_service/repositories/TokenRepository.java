@@ -1,6 +1,6 @@
-package com.ahmad.userservice.repositories;
+package com.ahmad.user_service.repositories;
 
-import com.ahmad.userservice.models.Token;
+import com.ahmad.user_service.models.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

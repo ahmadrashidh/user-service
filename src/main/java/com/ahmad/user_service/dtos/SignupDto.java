@@ -1,11 +1,18 @@
-package com.ahmad.userservice.dtos;
+package com.ahmad.user_service.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
 
-public class LoginRequestDto {
+public class SignupDto {
+    private String name;
     private String emailAddress;
     private String password;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getEmailAddress() {
         return emailAddress;

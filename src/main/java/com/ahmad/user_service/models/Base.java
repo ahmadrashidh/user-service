@@ -1,4 +1,4 @@
-package com.ahmad.userservice.models;
+package com.ahmad.user_service.models;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

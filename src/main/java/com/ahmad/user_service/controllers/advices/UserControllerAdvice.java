@@ -1,7 +1,7 @@
-package com.ahmad.userservice.controllers.advices;
+package com.ahmad.user_service.controllers.advices;
 
-import com.ahmad.userservice.dtos.ExceptionDto;
-import com.ahmad.userservice.exceptions.IncorrectUsernamePasswordException;
+import com.ahmad.user_service.dtos.ExceptionDto;
+import com.ahmad.user_service.exceptions.IncorrectUsernamePasswordException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
