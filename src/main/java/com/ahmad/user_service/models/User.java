@@ -1,55 +1,36 @@
 package com.ahmad.user_service.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
 @Entity
+@JsonDeserialize
 public class User extends Base{
     private String name;
     private String emailAddress;
     private String hashedPassword;
+
     @ManyToMany
-    private List<Role> roles = new ArrayList<>();
+    private Set<Role> roles = new HashSet<>();
+
     private boolean isEmailVerified;
 
-    public String getName() {
-        return name;
+    @JsonProperty("roles")
+    public Set<Role> getRoles() {
+        return new HashSet<>(roles);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    public String getHashedPassword() {
-        return hashedPassword;
-    }
-
-    public void setHashedPassword(String hashedPassword) {
-        this.hashedPassword = hashedPassword;
-    }
-
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
 
     public boolean isEmailVerified() {
         return isEmailVerified;

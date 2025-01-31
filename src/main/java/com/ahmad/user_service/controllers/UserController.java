@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("user")
 public class UserController {
 
-    private UserService authService;
+    private UserService userService;
 
 
-    public UserController(UserService authService){
-        this.authService = authService;
+    public UserController(UserService userService){
+        this.userService = userService;
     }
 
     @PostMapping("signup")
     public SignupResponseDto signup(@RequestBody SignupRequestDto signupReqDto){
         SignupDto signupDto = this.mapSignupRequestDtoToSignupDto(signupReqDto);
-        return this.mapUserToSignupResponseDto(this.authService.signup(signupDto));
+        return this.mapUserToSignupResponseDto(this.userService.signup(signupDto));
     }
 
     @PostMapping("login")
     public Token login(@RequestBody LoginRequestDto loginReqDto){
 
-        return this.authService.login(loginReqDto.getEmailAddress(), loginReqDto.getPassword());
+        return this.userService.login(loginReqDto.getEmailAddress(), loginReqDto.getPassword());
 
     }
 
     @PostMapping("logout")
     public ResponseEntity<Void> logout(@RequestBody TokenDto tokenDto){
 
-        this.authService.logout(tokenDto.getToken());
+        this.userService.logout(tokenDto.getToken());
 
         return ResponseEntity.ok().build();
     }

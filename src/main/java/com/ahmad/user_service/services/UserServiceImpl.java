@@ -60,13 +60,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void logout(String value) {
-        System.out.println("Logging out:" + value);
         Optional<Token> tokenOpt = this.tokenRepo.findByValueAndDeletedEquals(value, false);
         if(tokenOpt.isPresent()){
-            System.out.println("Token found");
            Token token = tokenOpt.get();
            token.setDeleted(true);
-            System.out.println("Token deleted:" + token.isDeleted());
            this.tokenRepo.save(token);
         }
     }
