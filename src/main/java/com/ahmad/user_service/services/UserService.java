@@ -13,6 +13,5 @@ public interface UserService {
     Token createToken(User user);
 
     void logout(String value);
-    
 
 }

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Slf4j
 @JsonDeserialize
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
@@ -35,12 +37,13 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<CustomGrantedAuthority> grantedAuthorities = new ArrayList<>();
+
         for(Role role: user.getRoles()) {
+            log.info(role.getName());
             grantedAuthorities.add(new CustomGrantedAuthority(role));
         }
         return grantedAuthorities;
     }
-
 
     @Override
     public String getPassword() {
