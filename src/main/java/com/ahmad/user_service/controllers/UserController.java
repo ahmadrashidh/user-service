@@ -45,6 +45,14 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("{id}")
+    public User getUser(@PathVariable("id") String id){
+        System.out.println("I have been called:" + id);
+        return new User();
+    }
+
+
+
     private SignupResponseDto mapUserToSignupResponseDto(User user){
         if(user == null)
             return null;
